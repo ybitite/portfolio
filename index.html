@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youness BITITE</title>
+    <link rel="icon" type="image/x-icon" href="image/icon-title.jpg">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="right-panel">
+            <div id="cardHome" class="card" onclick="loadContent('left-panel-content.html')">
+                <div id="imageHome"></div>
+            </div>
+            <div id="cardRealisation" class="card">
+                <h2>#Projects</h2>
+                <div id="imageRealisation"></div>
+            </div>
+            <div id="cardBlog" class="card">
+                <div id="imageBlog"></div>
+                <h2>@Blog</h2>
+            </div>
+            <div id="cardCoding" class="card">
+                <h2>&lsaquo;code&rsaquo;</h2>
+                <div id="imageCoding"></div>
+            </div>
+            <div id="cardExperience" class="card">
+                <div id="imageExperience"></div>
+                <h2>Experience++</h2>
+
+            </div>
+            <div id="cardContact" class="card">
+                <div id="imageContact"></div>
+            </div>
+
+        </div>
+
+        <!-- Right Panel -->
+        <div class="left-panel" >
+
+            <iframe src="left-panel-content.html" class="iframe-content" id="homeContent" ></iframe>
+        </div>
+
+    </div>
+    <script>
+        function loadContent(url) {
+            document.getElementById('homeContent').src = url;
+        }
+    
+            document.getElementById('cardExperience').onclick = function() {
+            loadContent('experience.html');
+            }
+            document.getElementById('cardRealisation').onclick = function() {
+            loadContent('realisation.html');
+            }
+            document.getElementById('cardCoding').onclick = function() {
+            loadContent('coding.html');
+            }
+            document.getElementById('cardBlog').onclick = function() {
+            loadContent('blog.html');
+            }
+            document.getElementById('cardContact').onclick = function() {
+                loadContent('contact.html');
+            };
+    </script>
+</body>
+
+</html>

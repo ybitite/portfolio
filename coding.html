@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youness BITITE</title>
+  <link rel="stylesheet" href="coding.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+  <!-- Prism.js Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Code</Code></h1> 
+    <!-- Example 1 -->
+      <div class="code-title">REST API Integration with Retrofit</div>
+      <div class="code-description">
+        Demonstrates API integration with Retrofit, including error handling and data parsing.
+      </div>
+      <pre><code class="language-java">
+// Setting up Retrofit instance
+Retrofit retrofit = new Retrofit.Builder()
+    .baseUrl("https://api.example.com/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build();
+
+// Defining the API service
+public interface ApiService {
+    @GET("items")
+    Call<List<Item>> getItems();
+}
+
+// Making an API call
+ApiService service = retrofit.create(ApiService.class);
+service.getItems().enqueue(new Callback<List<Item>>() {
+    @Override
+    public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
+        if (response.isSuccessful()) {
+            List<Item> items = response.body();
+            // Handle the received data
+        } else {
+            Log.e("API Error", "Error code: " + response.code());
+        }
+    }
+
+    @Override
+    public void onFailure(Call<List<Item>> call, Throwable t) {
+        Log.e("API Failure", t.getMessage());
+    }
+});
+      </code></pre>
+      <a class="github-link" href="https://github.com/ybitite/solicatering" target="_blank">View Full Project on GitHub</a>
+
+    <!-- Example 2 -->
+      <div class="code-title">Local Database Management with Room</div>
+      <div class="code-description">
+        Shows how to manage a local database using Room, including DAO and entity setup.
+      </div>
+      <pre><code class="language-java">
+// Entity class for database
+@Entity(tableName = "items")
+public class Item {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    private String name;
+    private double price;
+}
+
+// DAO Interface
+@Dao
+public interface ItemDao {
+    @Insert
+    void insert(Item item);
+
+    @Query("SELECT * FROM items")
+    List<Item> getAllItems();
+}
+
+// Database class
+@Database(entities = {Item.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+    public abstract ItemDao itemDao();
+}
+      </code></pre>
+      <a class="github-link" href="https://github.com/ybitite/solicatering" target="_blank">View Full Project on GitHub</a>
+
+    <!-- Repeat for all other examples -->
+
+  </div>
+
+  <!-- Prism.js Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>

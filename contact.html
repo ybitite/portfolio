@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youness BITITE - Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    </style>
+</head>
+
+<body>
+    <div class="contact-section">
+        <div class="contact-info">
+            <h1>Contact Me</h1>
+
+            <div class="skills-section">
+                <div class="skills">
+                    <div class="skill-bubble-filled" style="background-color: #E63946;">y.bitite@gmail.com</div>
+                    <div class="skill-bubble-filled" style="background-color: #F4A261;">+41 78 229 89 66</div>
+                    <div class="skill-bubble-filled" style="background-color: #2A9D8F;">Grünerweg 9, 3013 Bern</div>
+                </div>
+            </div>
+
+                <div id="map">
+
+                </div>
+      
+            <div class="social-links">
+                <h3>/* Follow me on social media */</h3>
+                <a href="https://github.com/ybitite" target="_blank">
+                    <img src="image/icon-github.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/youness-bitite/" target="_blank">
+                    <img src="image/icon-linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        function initMap() {
+            46.95573128101961, 7.44369361271984
+            var myLatLng = { lat: 46.95573128101961, lng: 7.44369361271984 };
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 15
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: myLatLng,
+                title: 'My Location'
+            });
+        }
+    </script>
+    
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2kjw0zGB0KLV5OhtVFClpds3xhVNHyVI&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_reversegeocoding_v3">
+    </script>
+</body>
+
+</html>
