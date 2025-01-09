@@ -2,43 +2,39 @@
 <html lang="en">
 
 <head>
+    <!-- Meta information for responsive design and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
     <title>Youness BITITE - Projects</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="experience.css">
+
+    <!-- Linking CSS stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/experience.css">
+
+    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="left-panel-content">
+        <!-- Header -->
         <h1>Projects</h1>
+
+        <!-- Navigation for projects -->
         <div class="realisation-navigation">
-            <button class="realisation-button" id="button1" onclick="showExperience('project1','button1')">Vital Balance</button>
-            <button class="realisation-button" id="button2" onclick="showExperience('project2','button2')">Promesse Plus</button>
-            <button class="realisation-button" id="button3" onclick="showExperience('project3','button3')">ENT OFPPT</button>
-            <button class="realisation-button" id="button4" onclick="showExperience('project4','button4')">Jet Securite</button>
+            <button class="realisation-button" id="button1" onclick="showExperience('project1', 'button1')">Vital Balance</button>
+            <button class="realisation-button" id="button2" onclick="showExperience('project2', 'button2')">Promesse Plus</button>
+            <button class="realisation-button" id="button3" onclick="showExperience('project3', 'button3')">ENT OFPPT</button>
+            <button class="realisation-button" id="button4" onclick="showExperience('project4', 'button4')">Jet Securite</button>
         </div>
 
-        <div id="project2" class="experience-section">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>promesseplus.ch</h3>
-                    <h4>2023</h4>
-                    <ul>
-                        <li>I had the privilege of working on the website design project for Promesse Plus, a digital communications agency that is passionate about creating customized digital solutions My role was to design and develop a modern and attractive website that reflects the agency's identity while highlighting its services and expertise.</li>
-                    </ul>
-                    <div class="skills">
-                        <div class="skill-bubble-filled">WordPress</div>
-                        <div class="skill-bubble-filled">design</div>
-                        <div class="skill-bubble-filled">Web Application</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!-- Project 1: Vital Balance -->
         <div id="project1" class="experience-section">
             <div class="project-container">
                 <div class="project-details">
@@ -47,96 +43,103 @@
                     <ul>
                         <li>The project to create the e-commerce site for VitalBalance was successfully completed, providing a robust and attractive online platform for the sale of acupuncture mats.</li>
                     </ul>
+                    <!-- Skills for Project 1 -->
                     <div class="skills">
-                        <div class="skill-bubble-filled">Ecommerce </div>
+                        <div class="skill-bubble-filled">Ecommerce</div>
                         <div class="skill-bubble-filled">Branding</div>
                         <div class="skill-bubble-filled">CMS</div>
-                        <div class="skill-bubble-filled">shopify</div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div id="project3" class="experience-section">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>ENT OFPPT </h4>
-                    <h4>2016</h4>
-                    <ul>
-                        <li> ENT OFPPT is a software that represents a digital student space and that includes many features to ensure the smooth running of courses for OFPPT students.</li>
-                    </ul>
-                    <div class="skills">
-                        <div class="skill-bubble-filled">C#</div>
-                        <div class="skill-bubble-filled">SQL</div>
-                        <div class="skill-bubble-filled">Skill Three</div>
+                        <div class="skill-bubble-filled">Shopify</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="project4" class="experience-section">
+        <!-- Project 2: Promesse Plus -->
+        <div id="project2" class="experience-section" style="display: none;">
             <div class="project-container">
                 <div class="project-details">
-                    <h3>jet-securite.fr</h4>
+                    <h3>promesseplus.ch</h3>
+                    <h4>2023</h4>
+                    <ul>
+                        <li>I had the privilege of working on the website design project for Promesse Plus, a digital communications agency that is passionate about creating customized digital solutions. My role was to design and develop a modern and attractive website that reflects the agency's identity while highlighting its services and expertise.</li>
+                    </ul>
+                    <!-- Skills for Project 2 -->
+                    <div class="skills">
+                        <div class="skill-bubble-filled">WordPress</div>
+                        <div class="skill-bubble-filled">Design</div>
+                        <div class="skill-bubble-filled">Web Application</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: ENT OFPPT -->
+        <div id="project3" class="experience-section" style="display: none;">
+            <div class="project-container">
+                <div class="project-details">
+                    <h3>ENT OFPPT</h3>
+                    <h4>2016</h4>
+                    <ul>
+                        <li>ENT OFPPT is a software that represents a digital student space and includes many features to ensure the smooth running of courses for OFPPT students.</li>
+                    </ul>
+                    <!-- Skills for Project 3 -->
+                    <div class="skills">
+                        <div class="skill-bubble-filled">C#</div>
+                        <div class="skill-bubble-filled">SQL</div>
+                        <div class="skill-bubble-filled">Desktop Application</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: Jet Securite -->
+        <div id="project4" class="experience-section" style="display: none;">
+            <div class="project-container">
+                <div class="project-details">
+                    <h3>jet-securite.fr</h3>
                     <h4>2012</h4>
                     <ul>
-                        <li> I had the opportunity to collaborate with Jet Sécurité, a company specialized in the security field, for the creation of their website The main objective was to design an online platform that reflects their professionalism, expertise and high quality security services.</li>
+                        <li>I had the opportunity to collaborate with Jet Sécurité, a company specialized in the security field, for the creation of their website. The main objective was to design an online platform that reflects their professionalism, expertise, and high-quality security services.</li>
                     </ul>
+                    <!-- Skills for Project 4 -->
                     <div class="skills">
                         <div class="skill-bubble-filled">Web Development</div>
                         <div class="skill-bubble-filled">UX</div>
                         <div class="skill-bubble-filled">HTML/CSS</div>
                         <div class="skill-bubble-filled">JavaScript</div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- JavaScript Section -->
     <script>
-
-
-        function showExperience(id1,id2) {
-            var list = document.getElementsByClassName('experience-section');
-            for (i in list) {
-                if(list[i].id != id1) {
-                    list[i].style.display = 'none';
-                }
-                else {
-                    document.getElementById(id1).style.display = 'block';
-                }
-                
+        // Function to show the selected project and hide others
+        function showExperience(projectId, buttonId) {
+            const sections = document.getElementsByClassName('experience-section');
+            for (let section of sections) {
+                section.style.display = (section.id === projectId) ? 'block' : 'none';
             }
-            document.getElementById('button2').style.color = "#F1FAEE";
-            markButton(id2);
+
+            // Update the active button styles
+            markButton(buttonId);
         }
 
-
-
-        function markButton(id) {
-            var list = document.getElementsByClassName('realisation-button') ;
-            for(i in list){
-                list[i].style.background = "#e63746" ;
-
-                if(list[i].id == id){
-                    list[i].style.background = "#e63746" ;
-                    list[i].style.scale = 1.05 ;
-                }
-                else {
-                    list[i].style.background = "#F1FAEE" ;
-                    list[i].style.scale = 1.00 ;
-                }
-            }                
+        // Function to update button styles
+        function markButton(buttonId) {
+            const buttons = document.getElementsByClassName('realisation-button');
+            for (let button of buttons) {
+                button.style.background = (button.id === buttonId) ? '#F4A261' : '#F1FAEE';
+                button.style.transform = (button.id === buttonId) ? 'scale(1.05)' : 'scale(1)';
+            }
         }
 
-        // Show the first experience by default
+        // Show the first project by default when the page loads
         document.addEventListener('DOMContentLoaded', function () {
-            showExperience('project1');
-            //document.getElementById('button1').style.background = "#e63746";
+            showExperience('project1', 'button1');
         });
     </script>
-
 </body>
 
 </html>

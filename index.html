@@ -2,73 +2,97 @@
 <html lang="en">
 
 <head>
+    <!-- Meta information for proper rendering and responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title and favicon -->
     <title>Youness BITITE</title>
     <link rel="icon" type="image/x-icon" href="image/icon-title.jpg">
-    <link rel="stylesheet" href="main.css">
+
+    <!-- Linking external CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- Preconnect to improve loading performance for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Font: Lilita One -->
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <!-- Left Panel -->
+        <!-- Right Panel: Contains interactive cards -->
         <div class="right-panel">
-            <div id="cardHome" class="card" onclick="loadContent('left-panel-content.html')">
+            <!-- Card: Home -->
+            <div id="cardHome" class="card" onclick="loadContent('home.html')">
                 <div id="imageHome"></div>
             </div>
+
+            <!-- Card: Projects -->
             <div id="cardRealisation" class="card">
                 <h2>#Projects</h2>
                 <div id="imageRealisation"></div>
             </div>
+
+            <!-- Card: Blog -->
             <div id="cardBlog" class="card">
                 <div id="imageBlog"></div>
                 <h2>@Blog</h2>
             </div>
+
+            <!-- Card: Coding -->
             <div id="cardCoding" class="card">
                 <h2>&lsaquo;code&rsaquo;</h2>
                 <div id="imageCoding"></div>
             </div>
+
+            <!-- Card: Experience -->
             <div id="cardExperience" class="card">
                 <div id="imageExperience"></div>
                 <h2>Experience++</h2>
-
             </div>
+
+            <!-- Card: Contact -->
             <div id="cardContact" class="card">
                 <div id="imageContact"></div>
             </div>
-
         </div>
 
-        <!-- Right Panel -->
-        <div class="left-panel" >
-
-            <iframe src="left-panel-content.html" class="iframe-content" id="homeContent" ></iframe>
+        <!-- Left Panel: Contains iframe for dynamic content -->
+        <div class="left-panel">
+            <iframe src="home.html" class="iframe-content" id="homeContent"></iframe>
         </div>
-
     </div>
+
+    <!-- JavaScript Section -->
     <script>
+        /**
+         * Function to dynamically load content into the iframe.
+         * @param {string} url - The URL of the content to load.
+         */
         function loadContent(url) {
             document.getElementById('homeContent').src = url;
         }
-    
-            document.getElementById('cardExperience').onclick = function() {
+
+        // Event listeners for card clicks
+        document.getElementById('cardExperience').onclick = function () {
             loadContent('experience.html');
-            }
-            document.getElementById('cardRealisation').onclick = function() {
+        };
+        document.getElementById('cardRealisation').onclick = function () {
             loadContent('realisation.html');
-            }
-            document.getElementById('cardCoding').onclick = function() {
+        };
+        document.getElementById('cardCoding').onclick = function () {
             loadContent('coding.html');
-            }
-            document.getElementById('cardBlog').onclick = function() {
+        };
+        document.getElementById('cardBlog').onclick = function () {
             loadContent('blog.html');
-            }
-            document.getElementById('cardContact').onclick = function() {
-                loadContent('contact.html');
-            };
+        };
+        document.getElementById('cardContact').onclick = function () {
+            loadContent('contact.html');
+        };
     </script>
 </body>
 
