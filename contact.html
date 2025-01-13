@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/contact.css">
 
+
     <!-- Preconnect to Google's font servers for faster load times -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,38 +23,43 @@
 
 <body>
     <!-- Main section for the contact information -->
-    <div class="contact-section">
-        <div class="contact-info">
-            <!-- Contact header -->
-            <h1>Contactez-moi</h1>
+    <div class="panel-content">
+            <div class="banier">
+                <br><br>
 
-            <!-- Section displaying contact details -->
-            <div class="skills-section">
-                <div class="skills">
-                    <div class="skill-bubble-filled" style="background-color: #E63946;">y.bitite@gmail.com</div>
-                    <div class="skill-bubble-filled" style="background-color: #F4A261;">+41 78 229 89 66</div>
-                    <div class="skill-bubble-filled" style="background-color: #2A9D8F;">Grünerweg 9, 3013 Bern</div>
+                <h2>Envoyez-moi un message</h2>
+
+                <!-- Section displaying contact details -->
+                <div class="section">
+                    <div class="group">
+                        <div class="bubble bubble-color-accent" >y.bitite@gmail.com</div>
+                        <div class="bubble bubble-color-accent" >+41 78 229 89 66</div>
+                        <div class="bubble bubble-color-accent" >Bern, Suisse</div>
+                    </div>
                 </div>
+                <br>
             </div>
 
-            <!-- Contact Form Section -->
-            <h2>Envoyez-moi un message</h2>
-            <form action="https://formspree.io/f/mbllpngp" method="POST">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required>
+            <div class="section">
+                <!-- Contact Form Section -->
+                 <br>
+                <form   action="https://formspree.io/f/mbllpngp" method="POST">
+                    <label class="form-style"  for="name">Nom</label><br>
+                    <input class="bubble bubble-details form-style" type="text" id="name" name="name" required><br><br>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                    <label class="form-style" for="email">Email</label><br>
+                    <input class="bubble bubble-details form-style" type="email" id="email" name="email" required><br><br>
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
+                    <label class="form-style" for="message">Message</label><br>
+                    <textarea class="bubble bubble-details form-style" style="min-height: 200px;" id="message" name="message" required></textarea><br><br>
 
-                <button type="submit">Envoyer</button>
-            </form>
+                    <button class="bubble bubble-color-accent"  type="submit">Envoyer</button><br>
+                </form>
+            </div>
 
             <!-- Section displaying social media links -->
             <div class="social-links">
-                <h3>Suivez-moi sur les réseaux sociaux</h3>
+                <h2>Suivez-moi sur les réseaux sociaux</h2>
                 <a href="https://github.com/ybitite" target="_blank">
                     <img src="image/icon-github.png" alt="GitHub">
                 </a>
@@ -61,32 +67,8 @@
                     <img src="image/icon-linkedin.png" alt="LinkedIn">
                 </a>
             </div>
-        </div>
     </div>
 
-    <!-- JavaScript for initializing the Google Map -->
-    <script>
-        // Function to initialize the map with a specific latitude and longitude
-        function initMap() {
-            var myLatLng = { lat: 46.95573128101961, lng: 7.44369361271984 };
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                zoom: 15
-            });
-
-            var marker = new google.maps.Marker({
-                map: map,
-                position: myLatLng,
-                title: 'Ma Localisation'
-            });
-        }
-    </script>
-
-    <!-- Google Maps API script -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2kjw0zGB0KLV5OhtVFClpds3xhVNHyVI&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_reversegeocoding_v3">
-    </script>
 </body>
 
 </html>

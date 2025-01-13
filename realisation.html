@@ -11,7 +11,6 @@
 
     <!-- Linking CSS stylesheets -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/experience.css">
 
     <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,102 +21,142 @@
 </head>
 
 <body>
-    <div class="left-panel-content">
-        <!-- Header -->
-        <h1>Projects</h1>
+    <div class="panel-content">
 
-        <!-- Navigation for projects -->
-        <div class="realisation-navigation">
-            <button class="realisation-button" id="button1" onclick="showExperience('project1', 'button1')">Vital Balance</button>
-            <button class="realisation-button" id="button2" onclick="showExperience('project2', 'button2')">Promesse Plus</button>
-            <button class="realisation-button" id="button3" onclick="showExperience('project3', 'button3')">ENT OFPPT</button>
-            <button class="realisation-button" id="button4" onclick="showExperience('project4', 'button4')">Jet Securite</button>
-        </div>
+        <!--banier-->
+        <div class="banier">
+            <div class="section">
 
-        <!-- Project 1: Vital Balance -->
-        <div id="project1" class="experience-section">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>vital-balance.ch</h3>
-                    <h4>2023</h4>
-                    <ul>
-                        <li>The project to create the e-commerce site for VitalBalance was successfully completed, providing a robust and attractive online platform for the sale of acupuncture mats.</li>
-                    </ul>
-                    <!-- Skills for Project 1 -->
-                    <div class="skills">
-                        <div class="skill-bubble-filled">Ecommerce</div>
-                        <div class="skill-bubble-filled">Branding</div>
-                        <div class="skill-bubble-filled">CMS</div>
-                        <div class="skill-bubble-filled">Shopify</div>
-                    </div>
+                <br><br><h2>Réalisations</h2>
+                <p class="presentation">Un aperçu de mes projets marquants, démontrant ma créativité et mon expertise technique à travers des solutions concrètes.</p>
+                <!-- Navigation for projects -->
+                 <br>
+                <div class="group">
+
+                    <button class="bubble bubble-color-accent" id="button1" 
+                        onclick="showExperience('project1', 'button1')"  ><b>Promesse</b> plus</button>
+                    <button class="bubble bubble-color-accent" id="button2" 
+                        onclick="showExperience('project2', 'button2')"><b>Vital</b> Balance</button>
+                    <button class="bubble bubble-color-accent" id="button3"
+                        onclick="showExperience('project3', 'button3')"><b>ENT</b> OFPPT</button>
+                    <button class="bubble bubble-color-accent" id="button4"
+                        onclick="showExperience('project4', 'button4')"><b>Jet</b> Securite</button>
                 </div>
+                <br>
             </div>
         </div>
 
-        <!-- Project 2: Promesse Plus -->
-        <div id="project2" class="experience-section" style="display: none;">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>promesseplus.ch</h3>
-                    <h4>2023</h4>
-                    <ul>
-                        <li>I had the privilege of working on the website design project for Promesse Plus, a digital communications agency that is passionate about creating customized digital solutions. My role was to design and develop a modern and attractive website that reflects the agency's identity while highlighting its services and expertise.</li>
-                    </ul>
-                    <!-- Skills for Project 2 -->
-                    <div class="skills">
-                        <div class="skill-bubble-filled">WordPress</div>
-                        <div class="skill-bubble-filled">Design</div>
-                        <div class="skill-bubble-filled">Web Application</div>
-                    </div>
+        
+
+        <!-- Project 1: Promesse Plus -->
+        <div id="project1" class="section details-section" style="display: none;">
+            <div class="bubble bubble-details bubble-large">
+                
+                <p>
+                    En <b>2022</b> j'ai eu le privilège de travailler sur le design et le développement du site web
+                    <b>promesseplus.ch</b>, une agence de communication numérique. Le but était de concevoir un site moderne
+                    et
+                    esthétique, reflétant l'identité de l'agence tout en mettant en avant ses services sur mesure et
+                    son expertise dans le domaine numérique.<br>
+                </p>
+                <!-- Compétences pour le Projet 1 -->
+                <div class="group">
+                    <div class="bubble-filled">WordPress</div>
+                    <div class="bubble-filled">Conception graphique</div>
+                    <div class="bubble-filled">Développement web</div>
                 </div>
             </div>
+   
+                <img src="image/references/FireShot/promesseplus/FireShot Capture 009 - Promesse + – Le partenaire de votre succès en ligne. Création de site_ - promesseplus.ch.png"
+                alt="promesseplus.ch image">
+   
+
+        </div>
+
+        <!-- Project 2: Vital Balance -->
+        <div id="project2" class="details-section section">
+            <div class="bubble bubble-details bubble-large">
+                <p>
+                    Le projet de création du site e-commerce <b>vitalbalance.ch</b> a été achevé avec succès en <b>2023</b>.
+                    Le site
+                    offre une plateforme robuste et attrayante pour la vente en ligne de tapis d'acupuncture. Ce
+                    projet a permis de créer une expérience utilisateur fluide tout en mettant en valeur les
+                    produits grâce à un design professionnel et fonctionnel.<br>
+                </p>
+                <!-- Compétences pour le Projet 2 -->
+                <div class="group">
+                    <div class="bubble-filled">Commerce électronique</div>
+                    <div class="bubble-filled">Identité visuelle</div>
+                    <div class="bubble-filled">Gestion de contenu</div>
+                    <div class="bubble-filled">Shopify</div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <img src="image/references/FireShot/vitalbalnce/FireShot Capture 005 - VitalBalance - www.vitalbalances.ch.png"
+                alt="vital-balance.ch image">
+
         </div>
 
         <!-- Project 3: ENT OFPPT -->
-        <div id="project3" class="experience-section" style="display: none;">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>ENT OFPPT</h3>
-                    <h4>2016</h4>
-                    <ul>
-                        <li>ENT OFPPT is a software that represents a digital student space and includes many features to ensure the smooth running of courses for OFPPT students.</li>
-                    </ul>
-                    <!-- Skills for Project 3 -->
-                    <div class="skills">
-                        <div class="skill-bubble-filled">C#</div>
-                        <div class="skill-bubble-filled">SQL</div>
-                        <div class="skill-bubble-filled">Desktop Application</div>
-                    </div>
+        <div id="project3" class="details-section section" style="display: none;">
+            <div class="bubble bubble-details bubble-large">
+                <p>
+                    ENT OFPPT est une <b>application bureau</b> conçue pour les étudiants de l'OFPPT en <b>2016</b>,
+                    proposant un espace numérique
+                    riche en fonctionnalités. Ce projet vise à simplifier la gestion des cours et à offrir des
+                    outils performants pour garantir le bon déroulement des formations académiques.<br>             
+                </p>
+
+                <!-- Compétences pour le Projet 3 -->
+                <div class="group">
+                    <div class="bubble-filled">Développement logiciel</div>
+                    <div class="bubble-filled">Bases de données SQL</div>
+                    <div class="bubble-filled">Application de bureau</div>
                 </div>
             </div>
+            <br>
+            <br>
+            <img src="image/references/ent-ofppt.jpg" alt="ENT OFPPT image">
+            <br>
+            <br>
         </div>
 
-        <!-- Project 4: Jet Securite -->
-        <div id="project4" class="experience-section" style="display: none;">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>jet-securite.fr</h3>
-                    <h4>2012</h4>
-                    <ul>
-                        <li>I had the opportunity to collaborate with Jet Sécurité, a company specialized in the security field, for the creation of their website. The main objective was to design an online platform that reflects their professionalism, expertise, and high-quality security services.</li>
-                    </ul>
-                    <!-- Skills for Project 4 -->
-                    <div class="skills">
-                        <div class="skill-bubble-filled">Web Development</div>
-                        <div class="skill-bubble-filled">UX</div>
-                        <div class="skill-bubble-filled">HTML/CSS</div>
-                        <div class="skill-bubble-filled">JavaScript</div>
-                    </div>
+        <!-- Project 4: Jet Sécurité -->
+        <div id="project4" class="details-section section" style="display: none;">
+            <div class="bubble bubble-details bubble-large">
+                <p>
+                    J'ai collaboré en <b>2017</b> avec Jet Sécurité, une entreprise spécialisée dans le domaine de la
+                    sécurité,
+                    pour la création du site web <b>jetsecurite.fr</b>. L'objectif principal était de concevoir une
+                    plateforme en
+                    ligne qui reflète leur professionnalisme, leur expertise, et leurs services de sécurité de haute
+                    qualité.<br>
+                </p>
+
+                <!-- Compétences pour le Projet 4 -->
+                <div class="group">
+                    <div class="bubble-filled">Développement web</div>
+                    <div class="bubble-filled">Expérience utilisateur (UX)</div>
+                    <div class="bubble-filled">Intégration HTML/CSS</div>
+                    <div class="bubble-filled">JavaScript</div>
                 </div>
             </div>
+            <br>
+            <br>
+            <img src="image/references/FireShot/jetsecurite/FireShot Capture 014 - JetSecurité - web.archive.org.png"
+                alt="jetsecurite.ch image">
+            <br>
+            <br>
         </div>
+
     </div>
 
     <!-- JavaScript Section -->
     <script>
         // Function to show the selected project and hide others
         function showExperience(projectId, buttonId) {
-            const sections = document.getElementsByClassName('experience-section');
+            const sections = document.getElementsByClassName('details-section');
             for (let section of sections) {
                 section.style.display = (section.id === projectId) ? 'block' : 'none';
             }
@@ -128,9 +167,10 @@
 
         // Function to update button styles
         function markButton(buttonId) {
-            const buttons = document.getElementsByClassName('realisation-button');
+            const buttons = document.getElementsByClassName('bubble-color-accent');
             for (let button of buttons) {
-                button.style.background = (button.id === buttonId) ? '#F4A261' : '#F1FAEE';
+                button.style.color = (button.id === buttonId) ? '#1D3557' : '#F1FAEE';
+                button.style.backgroundColor = (button.id === buttonId) ? '#F1FAEE' : '#1D3557';
                 button.style.transform = (button.id === buttonId) ? 'scale(1.05)' : 'scale(1)';
             }
         }

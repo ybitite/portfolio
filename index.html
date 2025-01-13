@@ -25,75 +25,85 @@
 <body>
     <div class="container">
         
-        <!-- Right Panel: Contains interactive cards -->
-        <div class="right-panel" style="display: none;">
-            <!-- Card: Home -->
-            <div id="cardHome" class="card" onclick="loadContent('home.html')">
-                <div id="imageHome"></div>
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <!-- Hamburger Icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
 
-            <!-- Card: Projects -->
-            <div id="cardRealisation" class="card">
-                <h2>#Projects</h2>
-                <div id="imageRealisation"></div>
-            </div>
-
-            <!-- Card: Blog -->
-            <div id="cardBlog" class="card">
-                <div id="imageBlog"></div>
-                <h2>@Blog</h2>
-            </div>
-
-            <!-- Card: Coding -->
-            <div id="cardCoding" class="card">
-                <h2>&lsaquo;code&rsaquo;</h2>
-                <div id="imageCoding"></div>
-            </div>
-
-            <!-- Card: Experience -->
-            <div id="cardExperience" class="card">
-                <div id="imageExperience"></div>
-                <h2>Experience++</h2>
-            </div>
-
-            <!-- Card: Contact -->
-            <div id="cardContact" class="card">
-                <div id="imageContact"></div>
-            </div>
+            <!-- Navigation Menu -->
+            <ul class="navbar-menu">
+                <li>
+                    <a href="home.html" class="active" onclick="markButton('home.html')" target="iframe-content-target">
+                        <img src="/image/icon-Home-clair.png" alt="Home Icon">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="realisation.html" onclick="markButton('realisation.html')" target="iframe-content-target">
+                        <img src="/image/icon-realisation-clair.png" alt="Projects Icon">
+                        Realisations
+                    </a>
+                </li>
+<!--                 <li>
+                    <a href="blog.html" onclick="markButton('blog.html')" target="iframe-content-target">
+                        <img src="/image/icon-blog-clair.png" alt="Blog Icon">
+                        Blog
+                    </a>
+                </li> -->
+                <li>
+                    <a href="coding.html" onclick="markButton('coding.html')" target="iframe-content-target">
+                        <img src="/image/icon-coding-clair.png" alt="Coding Icon">
+                        Code
+                    </a>
+                </li>
+                <li>
+                    <a href="experience.html" onclick="markButton('experience.html')" target="iframe-content-target"> 
+                        <img src="/image/icon-experience-clair.png" alt="Experience Icon">
+                        Expériences
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" onclick="markButton('contact.html')" target="iframe-content-target">
+                        <img src="/image/icon-contact-clair.png" alt="Contact Icon">
+                        Contact
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <!-- Left Panel: Contains iframe for dynamic content -->
-        <div class="left-panel">
-            <iframe src="home.html" class="iframe-content" id="homeContent"></iframe>
+        <div class="panel">
+            <iframe src="home.html" class="iframe-content" name="iframe-content-target"></iframe>
         </div>
     </div>
 
     <!-- JavaScript Section -->
     <script>
-        /**
-         * Function to dynamically load content into the iframe.
-         * @param {string} url - The URL of the content to load.
-         */
-        function loadContent(url) {
-            document.getElementById('homeContent').src = url;
-        }
 
-        // Event listeners for card clicks
-        document.getElementById('cardExperience').onclick = function () {
-            loadContent('experience.html');
-        };
-        document.getElementById('cardRealisation').onclick = function () {
-            loadContent('realisation.html');
-        };
-        document.getElementById('cardCoding').onclick = function () {
-            loadContent('coding.html');
-        };
-        document.getElementById('cardBlog').onclick = function () {
-            loadContent('blog.html');
-        };
-        document.getElementById('cardContact').onclick = function () {
-            loadContent('contact.html');
-        };
+        // Function to update button styles
+        function markButton(documentLink) {
+            const links = document.querySelectorAll('.navbar-menu a');
+
+            // Parcourir tous les liens et vérifier si l'URL correspond à la page actuelle
+            links.forEach(link => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref === documentLink) {
+                    link.classList.add('active');  // Ajouter la classe active
+                } else {
+                    link.classList.remove('active'); // Retirer la classe active des autres
+                }
+            });
+            toggleMenu()
+        }   
+        
+        function toggleMenu() {
+        const menu = document.querySelector('.navbar-menu');
+        menu.classList.toggle('active');
+    }
     </script>
 </body>
 

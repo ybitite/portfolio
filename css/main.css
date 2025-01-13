@@ -1,4 +1,21 @@
 /* =======================================
+   Variables Globales
+======================================== */
+:root {
+    --color-light: #F1FAEE;
+    --color-primary: #1D3557;
+    --color-secondary: #457B9D;
+    --color-accent: #F4A261;
+    --font-family-main: Cambria, Cochin, Georgia, Times, 'Times New Roman', 'sans serif';
+    --font-family-alt: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --transition-fast: 0.1s;
+    --radius-large: 20px;
+    --margin-large: 20px;
+    --margin-xlarge: 30px;
+    --margin-small: 10px;
+}
+
+/* =======================================
    Global Styles
 ======================================== */
 * {
@@ -6,186 +23,239 @@
 }
 
 html, body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', 'sans serif';
+    font-family: var(--font-family-main);
     font-weight: normal;
     height: 100vh;
     width: 100%;
+    background-color: var(--color-primary);
 }
 
 .container {
-    background-color: #F1FAEE;    
-    height:100%;
-    width: 100%;
+    background-color: var(--color-light);
     display: block;
-}
-
-/* =======================================
-   Left Panel Styles
-======================================== */
-.left-panel {
-    background-color: #1D3557;
     height: 100%;
     width: 100%;
-    border-radius: 2px;
-    display: block;
-    scrollbar-color: #1D3557;
-    
+    overflow: hidden;
 }
-
+.panel {
+    background-color: var(--color-primary);
+    display: block;
+    height: 100%;
+    scrollbar-color: var(--color-primary);
+    width: 100%;
+}
 .iframe-content {
     background-color: inherit;
+    border: none;
     height: 100%;
     width: 100%;
-    border: none;
+
+}
+/* =======================================
+   Panel Section Groups Styles
+======================================== */
+
+.panel-content {
+    background-color: inherit;
+    color: var(--color-light);
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    background-color: var(--color-primary);
+
+}
+
+.banier {
+    background-image: url(/image/banier.png);
+    height: fit-content;
+    width: 100%;
+    margin-top: 60px;
+    box-shadow: 5px 2px 5px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.section {
+    display: block;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+}
+
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* =======================================
-   Left Panel Content
+   Panel Content
 ======================================== */
-.left-panel-content {
-    background-color: inherit;
-    height: 100%;
-    width: 100%;
-    color: #F1FAEE;
-    text-align: left;
-    flex: 1;
+
+.panel-content h1, .panel-content h2, .panel-content p {
+    margin: 5px;
 }
 
-.left-panel-content h1 {
-    margin: 0.5em 0;
-}
-
-.left-panel-content h2 {
-    color: #457B9D;
-    margin: 0.5em 0;
-    border-style: dotted;
-    border-color: #457B9D;
-    border-width: 2px;
-    padding: 10px;
-    border-radius: 10px;
+.panel-content h2 {
+    color: var(--color-secondary);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
     width: fit-content;
 }
 
-.left-panel-content p {
-    color: #F1FAEE;
-    margin: 0.5em 0;
-}
-
-.left-panel-content .presentation {
-    margin: 1em 0;
+.panel-content .presentation {
+    color: var(--color-light);
+    font-size: large;
     line-height: 1.5;
-    color: #F1FAEE;
-}
-
-.skills-section {
-    margin-top: 2em;
-    width: 100%;
-}
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
 /* =======================================
-   Skill Bubble Styles
+   Bubble Styles
 ======================================== */
-.skill-bubble,
-.skill-bubble-filled,
-.cv-bubble-filled {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 20px;
-    text-decoration: none;
-    text-align: left;
-    transition: background-color 0.3s, transform 0.3s;
+/* Bubble Principal */
+.bubble,
+.bubble-filled {
+    border-radius: var(--radius-large);
     cursor: pointer;
-}
-
-.skill-bubble {
-    color: #F1FAEE;
-    background-color: transparent;
-    border: 2px solid #F1FAEE;
-}
-.skill-bubble-filled {
-    color: #1D3557;
-    background-color: #457B9D;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #F1FAEE;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-/*ceritification*/
-.certification{
-    border-color: #F4A261;
-}
-.certification b{
-    color: #F4A261;
-}
-/*diploma*/
-.diploma{
-    border-color: #F4A261;
-    background-color: #F1FAEE;
-    color: #1D3557;
-}
-.diploma b{
-    color: #F4A261;
-}
-/*language*/
-.Language{
-    border-color: #2A9D8F;
-}
-.Language b{
-    color: #2A9D8F;
-}
-/*technical skill*/
-.technical-skill-dropdown-details {
-    display: none;
-    position :absolute;    
-    color: #F1FAEE;
-    background-color: #457B9D;
-    font-weight: normal;
-    max-height: 100px;
-    width: auto;
-    z-index: 1;
-    padding: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-  }
-.technical-skill-dropdown{
-    position: relative;
     display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    text-align: left;
+
 }
-.technical-skill-details{
-    color: #F1FAEE;
+
+.bubble {
     background-color: transparent;
-    border-color: #F1FAEE;
+    border: 1px solid var(--color-light);
+    color: var(--color-light);
+    vertical-align: baseline;
+
+}
+
+.bubble-filled {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-light);
+    color: var(--color-primary);
+}
+
+/* Bubble large*/
+.bubble-large {
+    border-color: var(--color-accent);
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.bubble-large b {
+    color: var(--color-accent);
+}
+
+/*Bubble large filled*/
+.bubble-large-filled {
+    background-color: var(--color-light);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.bubble-large-filled b {
+    color: var(--color-accent);
+}
+
+/*bubble color accent*/
+.bubble-color-accent {
+    border-color: var(--color-secondary);
+    border-width: 2px;
+    background-color: #1D3557;
+    display: flex;
+}
+
+.bubble-color-accent b {
+    color: var(--color-secondary);
+}
+
+/*bubble details*/
+.bubble-details {
+    background-color: transparent;
+    border-color: var(--color-light);
+    border-style: dashed;
+    border-width: 1px;
+    color: var(--color-light);
     font-weight: normal;
-
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    margin-top: var(--margin-large);
 }
+.bubble-details p{
+    margin: var(--margin-large);
+}
+
+/*icon style*/
+.icon-style{
+    height: 18px;
+    width: 18px;
+    vertical-align: baseline;
+    margin-left: var(--margin-small);
+}
+
 /* =======================================
-   Skill Bubble Hover Effects
+   Bubble Hover Effects
 ======================================== */
-.skill-bubble:hover {
-    transition: 0.3s;
-    transform: scale(1.02);
+.bubble:hover,
+.bubble-filled:hover,
+.bubble-large-filled:hover {
+    transform: scale(1.01);
+    transition: var(--transition-fast);
 }
 
-.skill-bubble-filled:hover {
+.bubble-color-accent:hover {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+}
 
-    transition: 0.3s;
+/* =======================================
+   Details Section
+======================================== */
+
+.details-section{
+
+    margin-left: auto;
+    margin-right: auto;
+
 }
-.diploma:hover{    
-    transition: 0.3s;
-    transform: scale(1.02);
+.details-section b{
+    color: var(--color-accent) ;
 }
-.technical-skill-dropdown:hover .technical-skill-dropdown-details {
-    display: block;
-  }
+.details-section img{
+    border-radius: var(--radius-large);
+    outline-style: solid;
+    outline-width: 2px;
+    height: max-content;
+    width: 100%;
+    margin-top: var(--margin-large);
+    margin-bottom: var(--margin-large);
+}
+
+.details-section code {
+
+    width: 100%;
+    margin-top: var(--margin-large);
+    margin-bottom: var(--margin-large); 
+
+}
+.details-section-code{
+    border-radius: var(--radius-large);
+    outline-style: solid;
+    outline-width: 2px;
+    height: max-content;
+}
 
 /* =======================================
    Download CV and Social Links
@@ -194,22 +264,20 @@ html, body {
     margin-top: 2em;
 }
 
-
-
 .social-links {
     margin-top: 2em;
 }
 
 .social-links a {
-    margin-left: 10px;
     display: inline-block;
+    margin-left: 10px;
 }
 
 .social-links img {
-    width: 30px;
     height: 30px;
     margin-right: 5px;
-    transition: transform 0.3s;
+    transition: transform var(--transition-fast);
+    width: 30px;
 }
 
 .social-links img:hover {
@@ -217,69 +285,31 @@ html, body {
 }
 
 a {
+    color: var(--color-primary);
     text-decoration: none;
-    color: #1D3557;
 }
 
-/* =======================================
-   Navigation and Realisation Styles
-======================================== */
-.realisation-navigation {
-    margin-top: 20px;
-    text-align: start;
-}
-
-.realisation-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;    
-    border-radius: 20px;
-    border: none;
-    background-color: #F1FAEE;
-    color: #1D3557;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
 
 
 /* =======================================
    Responsive Styles
 ======================================== */
 @media (max-width: 920px) {
-    .left-panel {
-        width: 100%;
-        height: 100%;
-        margin: 0;
+    .section {
+        display: block;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
     }
 
-    .right-panel {
-        width: 100%;
-        height: 110%;
-        margin: 0;
-        border-radius: 0px;
-    }
-
-    .card h2 {
-        font-size: large;
-    }
 }
 
 @media (max-width: 720px) {
-    .left-panel {
-        width: 100%;
-        height: 100%;
-        margin: 0;
+    .section {
+        display: block;
+        margin-left: 3%;
+        margin-right: 3%;
+        width: 94%;
     }
 
-    .right-panel {
-        width: 100%;
-        height: 620px;
-        margin: 0;
-        border-radius: 0px;
-    }
-
-    .card h2 {
-        font-size: large;
-    }
 }
-

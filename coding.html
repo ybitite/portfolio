@@ -10,7 +10,7 @@
   <title>Youness BITITE</title>
 
   <!-- Linking to the CSS file for styling the page -->
-  <link rel="stylesheet" href="css/coding.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- Linking to Google Fonts for custom font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,102 +22,261 @@
 </head>
 
 <body>
-  <!-- Container for the page content -->
-  <div class="container">
-    <!-- Main title of the page -->
-    <h1>Code</h1>
+  <div class="panel-content">
 
-    <!-- Example 1: REST API Integration with Retrofit -->
-    <div class="code-title">
-      REST API Integration with Retrofit
-    </div>
-    <!-- Description of the first example -->
-    <div class="code-description">
-      Demonstrates API integration with Retrofit, including error handling and data parsing.
-    </div>
-    <!-- Code block for REST API integration -->
-    <pre><code class="language-java">
-        // Setting up Retrofit instance
-        Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://api.example.com/")  <!-- Base URL for the API -->
-            .addConverterFactory(GsonConverterFactory.create()) <!-- Gson converter for data parsing -->
-            .build();
+    <!--banier-->
+    <div class="banier">
+      <div class="section">
+        <br> <br>
+        <h2>Code</h2>
+        <p class="presentation">Des extraits de mon code pour illustrer mes compétences en Android et
+          bases de données, avec un accent sur la propreté et l’efficacité.
+        </p>
 
-        // Defining the API service
-        public interface ApiService {
-            @GET("items")  <!-- GET request to fetch items -->
-            Call<List<Item>> getItems();  <!-- API call definition -->
+        <br>
+        <!-- Navigation for Code theme -->
+        <div class="group" style="display: none;">
+
+          <button class="bubble bubble-color-accent" id="button1"
+            onclick="showExperience('codeTheme1', 'button1')"><b>Android</b> JAVA</button>
+          <button class="bubble bubble-color-accent" id="button2"
+            onclick="showExperience('codeTheme2', 'button2')"><b>Web</b> HTML|CSS|JS</button>
+          <button class="bubble bubble-color-accent" id="button3"
+            onclick="showExperience('codeTheme3', 'button3')"><b>SQL</b> MSSQL</button>
+        </div>
+      
+        <br>
+      </div>
+    </div>
+
+    <br>
+
+
+    <!-- Code Theme 1 : Android -->
+    <div id="codeTheme1">
+      <div class="details-section  section">
+        <div class="bubble bubble-details bubble-large">
+          <p>
+            <b>Intégration d'une API REST avec Retrofit</b><br>
+            Implémente la communication avec une API REST en utilisant Retrofit, incluant la gestion des erreurs et
+            l'analyse des données incluant la gestion des erreurs et
+            l'analyse des données.
+          </p>
+          <div class="group">
+            <div class="bubble-filled">Android</div>
+            <div class="bubble-filled">Java</div>
+            <div class="bubble-filled">Retrofit</div>
+            <div class="bubble-filled">API REST</div>
+          </div>
+        </div>
+        <br><br>
+          <pre class="details-section-code">
+                  <code class="language-java">
+    // Configuration de l'instance Retrofit
+    Retrofit retrofit = new Retrofit.Builder()
+      .baseUrl("https://api.example.com/") 
+      .addConverterFactory(GsonConverterFactory.create()) 
+      .build();
+
+    // Définition du service API
+    public interface ApiService {
+      @GET("items") // Requête GET pour récupérer les éléments
+      Call<List<Item>> getItems(); // Définition de l'appel API
+    }
+
+    // Appel de l'API
+    ApiService service = retrofit.create(ApiService.class); /
+    service.getItems().enqueue(new Callback<List<Item>>() { /
+      @Override
+      public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
+          if (response.isSuccessful()) {
+              List<Item> items = response.body();
+              // Gestion des données reçues
+          } else {
+              Log.e("Erreur API", "Code d'erreur : " + response.code()); 
+          }
+      }
+
+      @Override
+      public void onFailure(Call<List<Item>> call, Throwable t) {
+          Log.e("Échec API", t.getMessage()); // Gestion des échecs de l'API
+      }
+    });
+                </code>
+              </pre>
+      </div>
+      <br>
+      <br>
+
+      <div class="details-section section">
+        <div class="bubble bubble-details bubble-large">
+          <p>
+            <b>Création d'une Base de Données Locale avec Room</b><br>
+            Met en place une base de données SQLite locale en utilisant la bibliothèque Room pour une gestion efficace des
+            données. incluant la gestion des erreurs et
+            l'analyse des données.
+            <br><br>
+          </p>
+          <div class="group">
+            <div class="bubble-filled">Android</div>
+            <div class="bubble-filled">Java</div>
+            <div class="bubble-filled">Room</div>
+            <div class="bubble-filled">SQLite</div>
+          </div>
+        </div>
+        <br><br>
+          <pre class="details-section-code"><code class="language-java">
+    // Entité représentant une table dans la base de données
+    @Entity(tableName = "users")
+    public class User {
+      @PrimaryKey(autoGenerate = true)
+      private int id;
+
+      @ColumnInfo(name = "username")
+      private String username;
+
+      @ColumnInfo(name = "email")
+      private String email;
+
+      // Getters et setters
+      // ...
+    }
+
+    // DAO (Data Access Object) pour accéder aux données
+    @Dao
+    public interface UserDao {
+      @Insert
+      void insert(User user);
+
+      @Query("SELECT * FROM users WHERE id = :userId")
+      User getUserById(int userId);
+
+      @Delete
+      void delete(User user);
+    }
+
+    // Base de données Room
+    @Database(entities = {User.class}, version = 1)
+    public abstract class AppDatabase extends RoomDatabase {
+      public abstract UserDao userDao();
+    }
+
+    // Initialisation de la base de données
+    AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+          AppDatabase.class, "database-name").build();
+          </code></pre>
+      </div>
+      <br>
+      <br>
+      <div class="details-section section">
+        <div class="bubble bubble-details bubble-large">
+          <p>
+            <b>Implémentation d'un RecyclerView avec un Adaptateur Personnalisé</b><br>
+            Affiche une liste d'éléments en utilisant RecyclerView avec un adaptateur personnalisé pour une meilleure
+            performance et flexibilité.
+            <br><br>
+          </p>
+
+          <div class="group">
+            <div class="bubble-filled">Android</div>
+            <div class="bubble-filled">Java</div>
+            <div class="bubble-filled">RecyclerView</div>
+            <div class="bubble-filled">UI/UX</div>
+          </div>
+        </div>
+        <br><br>
+          <pre class="details-section-code"><code class="language-java">
+    // Classe de l'adaptateur pour RecyclerView
+    public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+      private List<String> data;
+
+      // Constructeur
+      public MyAdapter(List<String> data) {
+          this.data = data;
+      }
+
+      // Création des nouvelles vues
+      @Override
+      public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+          // Crée une nouvelle vue
+          View view = LayoutInflater.from(parent.getContext())
+                  .inflate(R.layout.recycler_item, parent, false);
+          return new ViewHolder(view);
+      }
+
+      // Remplacement du contenu d'une vue
+      @Override
+      public void onBindViewHolder(ViewHolder holder, int position) {
+          // Récupère l'élément pour cette position
+          String item = data.get(position);
+          // Remplace le contenu de la vue
+          holder.textView.setText(item);
+      }
+
+      // Retourne la taille de l'ensemble de données
+      @Override
+      public int getItemCount() {
+          return data.size();
+      }
+
+      // Classe ViewHolder
+      public static class ViewHolder extends RecyclerView.ViewHolder {
+          public TextView textView;
+
+          public ViewHolder(View view) {
+              super(view);
+              textView = view.findViewById(R.id.textView);
+          }
+      }
+    }
+
+    // Utilisation de l'adaptateur dans une activité
+    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+    MyAdapter adapter = new MyAdapter(myDataList);
+    recyclerView.setAdapter(adapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+              </code></pre>
+      </div>
+      <br>
+      <br>
+    </div>
+
+
+    <!-- JavaScript Section -->
+    <script>
+      // Function to show the selected project and hide others
+      function showExperience(projectId, buttonId) {
+        const sections = document.getElementsByClassName('realisation-section');
+        for (let section of sections) {
+          section.style.display = (section.id === projectId) ? 'block' : 'none';
         }
 
-        // Making an API call
-        ApiService service = retrofit.create(ApiService.class);  <!-- Creating the API service instance -->
-        service.getItems().enqueue(new Callback<List<Item>>() {  <!-- Asynchronous API request -->
-            @Override
-            public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
-                if (response.isSuccessful()) {
-                    List<Item> items = response.body();  <!-- Successful response handling -->
-                    // Handle the received data
-                } else {
-                    Log.e("API Error", "Error code: " + response.code());  <!-- Error handling -->
-                }
-            }
+        // Update the active button styles
+        markButton(buttonId);
+      }
 
-            @Override
-            public void onFailure(Call<List<Item>> call, Throwable t) {
-                Log.e("API Failure", t.getMessage());  <!-- Handling API failure -->
-            }
-        });
-      </code></pre>
-    <!-- Link to the full project on GitHub -->
-    <a class="github-link" href="https://github.com/ybitite/solicatering" target="_blank">View Full Project on GitHub</a>
-
-    <!-- Example 2: Local Database Management with Room -->
-    <div class="code-title">
-      Local Database Management with Room
-    </div>
-    <!-- Description of the second example -->
-    <div class="code-description">
-      Shows how to manage a local database using Room, including DAO and entity setup.
-    </div>
-    <!-- Code block for local database management with Room -->
-    <pre><code class="language-java">
-        // Entity class for database
-        @Entity(tableName = "items")  <!-- Room entity definition -->
-        public class Item {
-            @PrimaryKey(autoGenerate = true)  <!-- Primary key with auto-generation -->
-            private int id;
-
-            private String name;  <!-- Item name -->
-            private double price;  <!-- Item price -->
+      // Function to update button styles
+      function markButton(buttonId) {
+        const buttons = document.getElementsByClassName('bubble-color-accent');
+        for (let button of buttons) {
+          button.style.color = (button.id === buttonId) ? '#1D3557' : '#F1FAEE';
+          button.style.backgroundColor = (button.id === buttonId) ? '#F1FAEE' : '#1D3557';
+          button.style.transform = (button.id === buttonId) ? 'scale(1.05)' : 'scale(1)';
         }
+      }
 
-        // DAO Interface for database operations
-        @Dao
-        public interface ItemDao {
-            @Insert  <!-- Insert operation for items -->
-            void insert(Item item);
+      // Show the first project by default when the page loads
+      document.addEventListener('DOMContentLoaded', function () {
+        showExperience('project1', 'button1');
+      });
+    </script>
 
-            @Query("SELECT * FROM items")  <!-- Query to get all items -->
-            List<Item> getAllItems();
-        }
 
-        // Database class for Room database configuration
-        @Database(entities = {Item.class}, version = 1)  <!-- Room database class with item entity -->
-        public abstract class AppDatabase extends RoomDatabase {
-            public abstract ItemDao itemDao();  <!-- Abstract method for DAO -->
-        }
-      </code></pre>
-    <!-- Link to the full project on GitHub -->
-    <a class="github-link" href="https://github.com/ybitite/solicatering" target="_blank">View Full Project on GitHub</a>
 
-    <!-- You can repeat similar sections for more code examples here -->
-
-  </div>
-
-  <!-- Linking Prism.js script for syntax highlighting functionality -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <!-- Additional Prism.js component for Java syntax highlighting -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <!-- Linking Prism.js script for syntax highlighting functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Additional Prism.js component for Java syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
 </body>
 
 </html>
