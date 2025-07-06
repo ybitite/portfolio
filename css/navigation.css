@@ -98,7 +98,7 @@
 }
 
 /* Active State */
-.navbar-menu a.active {
+.active {
     background-color: var(--color-accent);
     color: var(--color-secondary);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
