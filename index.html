@@ -37,13 +37,13 @@
             <!-- Navigation Menu -->
             <ul class="navbar-menu">
                 <li>
-                    <a href="home.html" onclick="markButton('home.html')" target="iframe-content-target">
+                    <a href="home.html" class="active"  target="iframe-content-target">
                         <img src="/image/icon-Home-clair.png" alt="Home Icon">
                         Accueil
                     </a>
                 </li>
                 <li>
-                    <a href="realisation.html" onclick="markButton('realisation.html')" target="iframe-content-target">
+                    <a href="realisation.html" target="iframe-content-target">
                         <img src="/image/icon-realisation-clair.png" alt="Projects Icon">
                         Realisations
                     </a>
@@ -55,19 +55,19 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="coding.html" onclick="markButton('coding.html')" target="iframe-content-target">
+                    <a href="coding.html" target="iframe-content-target">
                         <img src="/image/icon-coding-clair.png" alt="Coding Icon">
                         Code
                     </a>
                 </li>
                 <li>
-                    <a href="experience.html" onclick="markButton('experience.html')" target="iframe-content-target"> 
+                    <a href="experience.html" target="iframe-content-target"> 
                         <img src="/image/icon-experience-clair.png" alt="Experience Icon">
                         Expériences
                     </a>
                 </li>
                 <li>
-                    <a href="contact.html" onclick="markButton('contact.html')" target="iframe-content-target">
+                    <a href="contact.html" target="iframe-content-target">
                         <img src="/image/icon-contact-clair.png" alt="Contact Icon">
                         Contact
                     </a>
@@ -83,6 +83,14 @@
 
     <!-- JavaScript Section -->
     <script>
+        // Add click event listeners to all links in the navbar menu
+        // This will mark the clicked link as active
+        document.querySelectorAll('.navbar-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href');
+                markButton(href);
+            });
+            });
 
         // Function to update button styles
         function markButton(documentLink) {
