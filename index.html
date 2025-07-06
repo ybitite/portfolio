@@ -48,12 +48,6 @@
                         Realisations
                     </a>
                 </li>
-<!--                 <li>
-                    <a href="blog.html" onclick="markButton('blog.html')" target="iframe-content-target">
-                        <img src="/image/icon-blog-clair.png" alt="Blog Icon">
-                        Blog
-                    </a>
-                </li> -->
                 <li>
                     <a href="coding.html" target="iframe-content-target">
                         <img src="/image/icon-coding-clair.png" alt="Coding Icon">
@@ -89,8 +83,14 @@
             link.addEventListener('click', function() {
                 const href = this.getAttribute('href');
                 markButton(href);
+                
+                // Close the menu after clicking a link 
+                const menu = document.querySelector('.navbar-menu');
+                if (menu.classList.contains('active')) {
+                    menu.classList.remove('active');
+                }
             });
-            });
+        });
 
         // Function to update button styles
         function markButton(documentLink) {
